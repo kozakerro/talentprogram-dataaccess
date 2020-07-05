@@ -19,7 +19,7 @@ public class DA03_JDBC_ExecuteStatements {
             statement = connection.createStatement();
             statement.executeUpdate("INSERT INTO OWNERS(FIRST_NAME, LAST_NAME, ADDRESS, CITY, TELEPHONE) " +
                     "VALUES ('Jonh', 'Pillow', 'Aleje Jerozolimskie 40', 'Warsaw', '225412277')");
-            ResultSet resultSet = statement.executeQuery("SELECT * FROM OWNERS E");
+            ResultSet resultSet = statement.executeQuery("SELECT * FROM OWNERS O");
             printOwners(resultSet);
 
             // more instructions go here
@@ -42,7 +42,7 @@ public class DA03_JDBC_ExecuteStatements {
             connection = DriverManager.getConnection(URL, USERNAME, PASSWORD);
             statement = connection.createStatement();
             statement.executeUpdate("UPDATE OWNERS SET FIRST_NAME = 'David' WHERE ID=4");
-            ResultSet resultSet = statement.executeQuery("SELECT * FROM OWNERS E");
+            ResultSet resultSet = statement.executeQuery("SELECT * FROM OWNERS O");
             printOwners(resultSet);
 
             // more instructions go here
@@ -64,8 +64,8 @@ public class DA03_JDBC_ExecuteStatements {
             Class.forName(DRIVER);
             connection = DriverManager.getConnection(URL, USERNAME, PASSWORD);
             statement = connection.createStatement();
-            statement.executeUpdate("DELETE FROM OWNERS WHERE ID=11");
-            ResultSet resultSet = statement.executeQuery("SELECT * FROM OWNERS E");
+            statement.executeUpdate("DELETE FROM OWNERS WHERE ID=7");
+            ResultSet resultSet = statement.executeQuery("SELECT * FROM OWNERS O");
             printOwners(resultSet);
 
             // more instructions go here
