@@ -7,7 +7,7 @@ import java.sql.SQLException;
 public class DA01_JDBC_DatabaseConnection {
 
     private static final String DRIVER = "org.hsqldb.jdbcDriver";
-    private static final String URL = "jdbc:hsqldb:C:/projects/petclinic-talentprogram/petclinic";
+    private static final String URL = "jdbc:hsqldb:C:/projects/petclinic-talentprogram/petclinicdb";
     private static final String USERNAME = "sa";
     private static final String PASSWORD = "";
 
