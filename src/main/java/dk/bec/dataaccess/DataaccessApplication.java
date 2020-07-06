@@ -10,8 +10,8 @@ public class DataaccessApplication {
 		SpringApplication.run(DataaccessApplication.class, args);
 
 		// JDBC
-		//DA01_JDBC_DatabaseConnection.connectToDatabase();
-		DA02_JDBC_SelectStatement.readAllOwners();
+		DA01_JDBC_DatabaseConnection.connectToDatabase();
+		//DA02_JDBC_SelectStatement.readAllOwners();
 		//DA03_JDBC_ExecuteStatements.insertOwner();
 		//DA03_JDBC_ExecuteStatements.updateOwners();
 		//DA03_JDBC_ExecuteStatements.deleteOwner();
