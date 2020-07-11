@@ -79,7 +79,7 @@ public class Owner {
     }
 
     public String getTelephone() {
-        return city;
+        return telephone;
     }
 
     public void setTelephone(String city) {
