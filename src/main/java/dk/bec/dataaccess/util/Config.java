@@ -8,7 +8,6 @@ public class Config {
     public static SessionFactory configure() {
         return new Configuration()
                 .configure("hibernate.cfg.xml")
-                .addAnnotatedClass(Owner.class)
                 .buildSessionFactory();
     }
 }
