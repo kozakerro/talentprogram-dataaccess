@@ -8,11 +8,7 @@ public class Config {
     public static SessionFactory configure() {
         return new Configuration()
                 .configure("hibernate.cfg.xml")
-                .addAnnotatedClass(Employee.class)
-                .addAnnotatedClass(Account.class)
-                .addAnnotatedClass(Computer.class)
-                .addAnnotatedClass(Assessment.class)
-                .addAnnotatedClass(Project.class)
+                .addAnnotatedClass(Owner.class)
                 .buildSessionFactory();
     }
 }
