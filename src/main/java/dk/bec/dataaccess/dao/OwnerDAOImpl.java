@@ -15,31 +15,7 @@ public class OwnerDAOImpl implements OwnerDAO {
     @PersistenceContext
     private EntityManager entityManager;
 
-    @Override
-    @Transactional
-    public List<Owner> getOwners() {
-        List<Owner> owners = entityManager
-                .createQuery("from Owner o", Owner.class)
-                .getResultList();
-        return owners;
-    }
 
-    @Override
-    @Transactional
-    public Optional<Owner> getOwnerById(int id) {
-        Optional<Owner> owner = Optional.ofNullable(entityManager.find(Owner.class, id));
-        return owner;
-    }
-
-    @Override
-    @Transactional
-    public List<Owner> getOwnersByLastName(String lastName) {
-        List<Owner> owners = entityManager
-                .createQuery("from Owner o where o.lastName like :lastName", Owner.class)
-                .setParameter("lastName", lastName)
-                .getResultList();
-        return owners;
-    }
 
     @Override
     public void createOwners() {
