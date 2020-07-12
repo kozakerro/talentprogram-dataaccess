@@ -9,6 +9,11 @@ public class Config {
         return new Configuration()
                 .configure("hibernate.cfg.xml")
                 .addAnnotatedClass(Owner.class)
+                .addAnnotatedClass(Vet.class)
+                .addAnnotatedClass(Account.class)
+                .addAnnotatedClass(Pet.class)
+                .addAnnotatedClass(Opinion.class)
+                .addAnnotatedClass(Specialty.class)
                 .buildSessionFactory();
     }
 }

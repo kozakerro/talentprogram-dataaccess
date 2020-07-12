@@ -27,6 +27,11 @@ public class Owner {
     @Column(name="TELEPHONE", length = 20, nullable = false)
     private String telephone;
 
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "owner")
+    private List<Pet> pets;
+
+    // constructors, getters and setters below
+
     public Owner() {}
 
     public Owner(String firstName, String lastName) {
@@ -47,8 +52,6 @@ public class Owner {
     public String getFirstName() {
         return firstName;
     }
-
-    // other getters and setters below
 
     public void setFirstName(String firstName) {
         this.firstName = firstName;
@@ -84,5 +87,25 @@ public class Owner {
 
     public void setTelephone(String city) {
         this.city = city;
+    }
+
+    private List<Pet> getPetsInternal() {
+        if (this.pets == null) {
+            this.pets = new ArrayList<>();
+        }
+        return pets;
+    }
+
+    public void addPet(Pet pet) {
+        pet.setOwner(this);
+        getPetsInternal().add(pet);
+    }
+
+    public List<Pet> getPets() {
+        return getPetsInternal();
+    }
+
+    public void setPets(List<Pet> pets) {
+        this.pets = pets;
     }
 }
