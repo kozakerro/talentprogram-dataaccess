@@ -8,7 +8,7 @@ public class DataaccessApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(DataaccessApplication.class, args);
-		DA04_Hibernate_PersistOwner.persistOwner();
+		//DA04_Hibernate_PersistOwner.persistOwner();
 		//DA05_Hibernate_QueryOwners.readOwner();
 		//DA06_Hibernate_UpdateOwners.updateOwner();
 		//DA06_Hibernate_UpdateOwners.anonymizeNames();
@@ -22,7 +22,7 @@ public class DataaccessApplication {
 		//DA12_Hibernate_ManyToMany_Vets_Specialties.createSpecialtiesForVets();
 		//DA13_Hibernate_ManyToMany_Bi_Vets_Specialties.createSpecialtiesForVets();
 		//DA14_Hibernate_LazyLoading_Owner_Pets.tryToFetchDataWhenSessionIsClosed();
-		DA14_Hibernate_LazyLoading_Owner_Pets.useJoinFetchQuery();
+		//DA14_Hibernate_LazyLoading_Owner_Pets.useJoinFetchQuery();
 	}
 
 }
