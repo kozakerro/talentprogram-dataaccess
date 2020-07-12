@@ -16,14 +16,6 @@ public class DA11_Hibernate_OneToMany_Uni_Vet_Opinions {
         try {
             session.beginTransaction();
 
-            Vet vet = new Vet("Johny", "Norman");
-            Opinion opinion1 = new Opinion("Very good vet!");
-            Opinion opinion2 = new Opinion("Much appreciated specialist!");
-
-            vet.addOpinion(opinion1);
-            vet.addOpinion(opinion2);
-
-            session.save(vet);
             session.getTransaction().commit();
         } catch (HibernateException he) {
             session.getTransaction().rollback();

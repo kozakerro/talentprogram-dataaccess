@@ -1,8 +1,6 @@
 package dk.bec.dataaccess.entity;
 
 import javax.persistence.*;
-import java.util.ArrayList;
-import java.util.List;
 
 @Entity
 @Table(name = "OWNERS")
@@ -26,9 +24,6 @@ public class Owner {
 
     @Column(name="TELEPHONE", length = 20, nullable = false)
     private String telephone;
-
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "owner")
-    private List<Pet> pets;
 
     // constructors, getters and setters below
 
@@ -89,23 +84,4 @@ public class Owner {
         this.city = city;
     }
 
-    private List<Pet> getPetsInternal() {
-        if (this.pets == null) {
-            this.pets = new ArrayList<>();
-        }
-        return pets;
-    }
-
-    public void addPet(Pet pet) {
-        pet.setOwner(this);
-        getPetsInternal().add(pet);
-    }
-
-    public List<Pet> getPets() {
-        return getPetsInternal();
-    }
-
-    public void setPets(List<Pet> pets) {
-        this.pets = pets;
-    }
 }

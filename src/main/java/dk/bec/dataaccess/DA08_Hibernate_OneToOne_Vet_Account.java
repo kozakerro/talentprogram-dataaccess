@@ -14,11 +14,7 @@ public class DA08_Hibernate_OneToOne_Vet_Account {
         Session session = factory.getCurrentSession();
         try {
             session.beginTransaction();
-            Vet vet = new Vet("Johny", "Norman");
-            Account account = new Account("j.norman", "1234567890");
-            vet.setAccount(account);
-            //session.save(account); saved automatically!
-            session.save(vet);
+
             session.getTransaction().commit();
         } catch (HibernateException he) {
             session.getTransaction().rollback();
@@ -32,9 +28,7 @@ public class DA08_Hibernate_OneToOne_Vet_Account {
         Session session = factory.getCurrentSession();
         try {
             session.beginTransaction();
-            Vet vet = session.get(Vet.class, 1);
-            session.delete(vet);
-            //session.delete(vet.getAccount()) deleted automatically!
+
             session.getTransaction().commit();
         } catch (HibernateException he) {
             session.getTransaction().rollback();
